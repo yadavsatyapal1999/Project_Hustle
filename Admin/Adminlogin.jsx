@@ -11,7 +11,7 @@ return <div className="login">
         <input type="mail" id="userid"/><br/>
         <label htmlFor="password">Password</label><br/>
         <input type="password" id="password"/> <br/>
-        <button type="submit">Submit</button>
+        <button id="submit" type="submit">Submit</button>
     </form>
 </div>
 
