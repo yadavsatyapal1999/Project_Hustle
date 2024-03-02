@@ -1,5 +1,5 @@
 
-
+import "./login.css"
 
 
 export default function Adminlogin(){
