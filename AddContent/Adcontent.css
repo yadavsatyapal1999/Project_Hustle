@@ -1,0 +1,43 @@
+#head{
+width: 50vw;
+height: 5vw;
+}
+#contento{
+    width: 50vw;
+    height: 25vw;  
+}
+textarea,input,button{
+    background: transparent;
+    color: white;
+    font-size: 1vw;
+    text-align: left;
+}
+.adcontent{
+   animation: Gradient 4s  infinite;
+}
+label{
+    color: white; 
+}
+#btno{
+    text-align: center;
+    background: none;
+    border: 2px solid white;
+}
+
+@keyframes Gradient{
+    0%{
+        background-image: repeating-conic-gradient(yellow, grey, red, green, black, pink, blue, white 20%);
+    }
+    25%{
+        background-image: repeating-conic-gradient(yellow, grey, red, green, black, pink, blue, white 60%);
+    }
+    50%{
+        background-image: repeating-conic-gradient(yellow, grey, red, green, black, pink, blue, white 30%);
+    }
+    75%{
+        background-image: repeating-conic-gradient(yellow, grey, red, green, black, pink, blue, white 50%);
+    }
+    100%{
+        background-image: repeating-conic-gradient(yellow, grey, red, green, black, pink, blue, white 90%);
+    }
+}

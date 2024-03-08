@@ -35,4 +35,5 @@ img{
     width: 45vw;
     max-width: 50vw;
     max-height: auto;
+    object-fit: cover;
 }
