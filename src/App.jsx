@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 
 import './App.css'
 import Adminlogin from '../Admin/Adminlogin'
@@ -8,10 +10,15 @@ import Addcontent from '../AddContent/Adcontent'
 function App() {
   
 
-  return (
-    <div>
-   <Addcontent/>
-    </div>
+  return (<BrowserRouter>
+    
+ <Routes>
+ <Route path="/"  element={<Content/>}/>
+  <Route path="/9407800962"  element={<Adminlogin/>}/>
+ <Route path='/9407800962/add' element ={<Addcontent/>}/>
+ </Routes>
+    
+    </BrowserRouter>
   )
 }
 
