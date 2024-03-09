@@ -4,6 +4,9 @@ import "./Adcontent.css";
 
 export default function Addcontent(){
 
+    let addpost = ()=>{
+        
+    }
 
 return <div className="adcontent" >
     <form>
