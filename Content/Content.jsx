@@ -4,23 +4,24 @@ import axios from "axios";
 
 export default function Content() {
   const url = "https://project-hustlebackend.onrender.com";
-const[post,setPost] = useState()
-//console.log(post)
+const[post,setPost] = useState();
+
   const fetchData = async () => {
     try {
       let response = await axios.get(url);
       let data = response.data.data;
       setPost(data);
-      console.log(data)
-      
     } catch (error) {
       console.error("Error fetching data:", error);
+      
     }
   };
 
   useEffect(() => {
-    fetchData(); // Call the fetchData function on component mount
-  }, []); // Empty dependency array to ensure useEffect runs only once
+
+    fetchData()
+    
+  }, []); // useEffect will run when confirmShown changes
 
   return (
     <div id="content">

@@ -14,8 +14,8 @@ function App() {
     
  <Routes>
  <Route path="/"  element={<Content/>}/>
-  <Route path="/9407800962"  element={<Adminlogin/>}/>
- <Route path='/9407800962/add' element ={<Addcontent/>}/>
+  <Route path="/9407800"  element={<Adminlogin/>}/>
+ <Route path='/9407800/add' element ={<Addcontent/>}/>
  </Routes>
     
     </BrowserRouter>
