@@ -1,9 +1,12 @@
-import { useState,useEffect } from "react"
+import { useState } from "react"
 import "./login.css"
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
+
 
 export default function Adminlogin(){
 
+    let navigate = useNavigate()
 const[data,SetData] = useState({
     email:"",
     password :""
@@ -16,7 +19,7 @@ let onchange = (e,credential) =>{
     })
     }
 
-console.log(data)
+
 
 let mainurl = "https://project-hustlebackend.onrender.com";
 
@@ -27,6 +30,9 @@ let mainurl = "https://project-hustlebackend.onrender.com";
         }).then((response)=>{
             console.log(response.data.token)
             sessionStorage.setItem("token",`${response.data.token}`)
+        })
+        .then(()=>{
+            navigate("/9407800/add");
         })
         .catch((err)=>{
             console.log(err)

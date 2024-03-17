@@ -1,8 +1,19 @@
 
+import { useNavigate } from "react-router";
 import "./Adcontent.css";
+import { useEffect } from "react";
 
 
 export default function Addcontent(){
+    let navigate = useNavigate();
+    let token = sessionStorage.getItem('token') ;
+    console.log(token);
+
+useEffect(()=>{
+    if( token  == null  || token == undefined){
+        navigate('/9407800');
+    }
+},[])
 
     let addpost = ()=>{
         
