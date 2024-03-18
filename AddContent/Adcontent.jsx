@@ -18,8 +18,8 @@ useEffect(()=>{
     if( token  == null  || token == undefined){
         navigate('/9407800');
     }
-    console.log(token)
-    console.log(post)
+   // console.log(token)
+   // console.log(post)
 },[])
 
     let addpost = async ()=>{
@@ -34,9 +34,11 @@ useEffect(()=>{
                     }
                 }
             );
-            console.log(response.data);
+            //console.log(response.data);
+            window.location.reload();
         } catch (error) {
             console.error('There was an error!', error);
+            alert("An Error Occurred");
         }
     }
 

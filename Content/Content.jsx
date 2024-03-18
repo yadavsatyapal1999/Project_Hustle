@@ -5,7 +5,7 @@ import axios from "axios";
 export default function Content() {
   const url = "https://project-hustlebackend.onrender.com";
 const[post,setPost] = useState();
-
+const[count,Setcount] = useState(0)
   const fetchData = async () => {
     try {
       let response = await axios.get(url);
@@ -16,6 +16,7 @@ const[post,setPost] = useState();
       
     }
   };
+//console.log(post)
 
   useEffect(() => {
 
@@ -26,22 +27,33 @@ const[post,setPost] = useState();
   return (
     <div id="content">
         {post != undefined || post != null ? <div>
-            <div id="heading">{post[0].heading}</div>
-      <div className="adspace">
-        <img src="" alt="error" />
-        {/* Ad space first */}
-      </div>
+            <div id="heading">{post[count].heading}</div>
+      
       <div id="contentandad">
-        <img src={post[0].link} alt="error" />
+        <img src={post[count].link} alt="error" />
         {/* Image for news to be displayed */}
         <div className="content">{/* Content to be Placed*/}
-        {post[0].content}
+        {post[count].content}
         </div>
-        <div className="adspace2">{/* Ad space second */}</div>
+        
       </div>
-      <div className="adspace">
-        <img src="" alt="error" />
-        {/* Ad space 3rd */}
+      
+      <div id="btn" >
+        <button onClick={()=>{
+          if(count==0){
+            window.location.reload()
+          }else{
+            Setcount(count-1);
+          }
+        }} >{count ==0 ? "Refresh" : "Previous"}</button>
+        <button onClick={()=>{
+          if(count==9){
+            window.location.reload()
+            Setcount(0)
+          }else{
+            Setcount(count+1);
+          }
+        }}>{count ==9 ? "Refresh" : "Next"}</button>
       </div>
         </div> : <h1>We will update soon</h1>}
       
