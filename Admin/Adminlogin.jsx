@@ -28,14 +28,14 @@ let mainurl = "https://project-hustlebackend.onrender.com";
         await axios.post(`${mainurl}/admin/admin/login`,data,{
             'Content-Type':'application/json'
         }).then((response)=>{
-            console.log(response.data.token)
+            //console.log(response.data.token)
             sessionStorage.setItem("token",`${response.data.token}`)
         })
         .then(()=>{
             navigate("/9407800/add");
         })
         .catch((err)=>{
-            console.log(err)
+           // console.log(err)
         })
 
     }
