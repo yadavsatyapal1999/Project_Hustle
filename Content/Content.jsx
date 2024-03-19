@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./content.css";
 import axios from "axios";
+import Loader from "../Loader/Loader"
+
 
 export default function Content() {
   const url = "https://project-hustlebackend.onrender.com";
@@ -55,7 +57,7 @@ const[count,Setcount] = useState(0)
           }
         }}>{count ==9 ? "Refresh" : "Next"}</button>
       </div>
-        </div> : <h1>We will update soon</h1>}
+        </div> : <h1>{<Loader/>}</h1>}
       
     </div>
   );

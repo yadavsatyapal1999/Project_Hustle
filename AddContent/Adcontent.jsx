@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import "./Adcontent.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import Loader from "../Loader/Loader"
 
 export default function Addcontent(){
     const[post,SetPost] = useState({
@@ -11,6 +11,8 @@ export default function Addcontent(){
         imglink:"",
         content:""
     })
+const[loader,Setloader] = useState(false)
+
     let navigate = useNavigate();
     let token = sessionStorage.getItem('token') ;
 
@@ -24,6 +26,8 @@ useEffect(()=>{
 
     let addpost = async ()=>{
         try {
+
+            Setloader(true)
             const response = await axios.post(
                 'https://project-hustlebackend.onrender.com/new/post',
                 post,
@@ -36,6 +40,7 @@ useEffect(()=>{
             );
             //console.log(response.data);
             window.location.reload();
+            Setloader(true)
         } catch (error) {
             console.error('There was an error!', error);
             alert("An Error Occurred");
@@ -44,7 +49,7 @@ useEffect(()=>{
 
 
 return <div className="adcontent" >
-    <form>
+ {loader == false ?    <form>
     <label htmlFor="head">Headings</label><br/>
     <textarea  required className="inpt" id="head"  value={post.heading} onChange={(e)=>{
         SetPost({
@@ -73,7 +78,7 @@ return <div className="adcontent" >
         e.preventDefault();
         addpost()
     }} >Submit</button>
-    </form>
+    </form> : <div>{<Loader/>}</div>}
 </div>
 
 }
